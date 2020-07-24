@@ -1,0 +1,40 @@
+<div id="app">
+  <!-- <input type="text" v-model="name"/>
+  <p>{{name}}</p> -->
+  <p>Ingrese la edad <input type="number" v-model="edad"/></p>
+  <p v-if="edad>=18">Usted es mayor de edad</p>
+  <p v-else-if="edad>0">Usted es menor de edad</p>
+
+  <p>Ingrese un valor entre 1 y 100:
+    <input type="number" v-model="numero" min="1" max="100"></p>
+    <p v-if="numero<=9">Tiene un dígito</p>
+    <p v-else-if="numero<=99">Tiene dos dígitos</p>
+    <p v-else>Tiene tres dígitos</p>
+
+    <template v-if="numero==50">
+      <h1>Número 50</h1>
+      <p>Estamos en la mitad.</p>
+    </template>
+
+      <div v-show="numero==100">
+      <h1>Número 100</h1>
+      <p>Legamos al tope.</p>
+    </div>
+    <ul>
+      <li v-for="lenguaje in lenguajes">{{lenguaje}}</li>
+    </ul>
+
+
+    <table border="1">
+      <tr><td>Código</td><td>Descripción</td><td>Precio</td></tr>
+      <template v-for="articulo in articulos">
+        <tr>
+          <td>{{articulo.codigo}}</td>
+          <td>{{articulo.descripcion}}</td>
+          <td>{{articulo.precio}}</td>
+        </tr>
+      </template>
+    </table>
+
+    <p><button v-on:click="incrementar">{{contador}}</button></p>
+</div>
